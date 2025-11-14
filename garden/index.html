@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Garden - Interactive Botanical Typography</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body data-color-scheme="dark">
+    <div class="garden-container">
+        <header class="garden-header">
+            <h1 class="garden-title">Letter Garden</h1>
+            <p class="garden-subtitle">Type a word and watch your garden grow</p>
+            
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="wordInput" 
+                    class="word-input form-control" 
+                    placeholder="Enter a word..."
+                    maxlength="20"
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="Type a word using A-Z letters"
+                >
+                <button id="clearButton" class="btn btn--secondary clear-btn" aria-label="Clear the garden">Clear Garden</button>
+            </div>
+        </header>
+
+        <main class="garden-main">
+            <div class="garden-ground" aria-hidden="true"></div>
+            <svg id="gardenSvg" class="garden-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYEnd meet" role="img" aria-label="Letter Garden canvas">
+                <defs>
+                    <filter id="plantGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge> 
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <!-- Plants will be dynamically added here -->
+            </svg>
+            
+            <!-- Save Toolbar -->
+            <div id="saveToolbar" class="save-toolbar hidden">
+                <button id="exportPngBtn" class="save-btn" title="Export as PNG Image">
+                    <span class="save-icon">📷</span>
+                    <span class="save-label">PNG</span>
+                </button>
+                <button id="exportSvgBtn" class="save-btn" title="Export as SVG File">
+                    <span class="save-icon">🎨</span>
+                    <span class="save-label">SVG</span>
+                </button>
+                <button id="generateCodeBtn" class="save-btn" title="Generate Garden Code">
+                    <span class="save-icon">🔗</span>
+                    <span class="save-label">Code</span>
+                </button>
+                <button id="saveGardenBtn" class="save-btn" title="Save to Gallery">
+                    <span class="save-icon">💾</span>
+                    <span class="save-label">Save</span>
+                </button>
+                <button id="openGalleryBtn" class="save-btn" title="Open Gallery">
+                    <span class="save-icon">🖼️</span>
+                    <span class="save-label">Gallery</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Load Garden Code Input -->
+        <div class="code-input-section">
+            <div class="form-group">
+                <label for="gardenCodeInput" class="form-label">Load Garden Code:</label>
+                <div class="code-input-container">
+                    <input 
+                        type="text" 
+                        id="gardenCodeInput" 
+                        class="form-control code-input" 
+                        placeholder="Enter garden code (e.g., GARDEN-ROSE-A4B2C1)"
+                    >
+                    <button id="loadCodeBtn" class="btn btn--primary">Load</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="garden-footer">
+            <p class="garden-info">Each letter creates a unique plant with its own characteristics</p>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    
+    <!-- Save Garden Modal -->
+    <div id="saveGardenModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Save Garden</h3>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="gardenName" class="form-label">Garden Name:</label>
+                    <input type="text" id="gardenName" class="form-control" placeholder="My Beautiful Garden" maxlength="50">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmSaveBtn" class="btn btn--primary">Save Garden</button>
+                <button id="cancelSaveBtn" class="btn btn--secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Garden Code Modal -->
+    <div id="gardenCodeModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Garden Code</h3>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Share this code with others to recreate your garden:</p>
+                <div class="code-display">
+                    <input type="text" id="generatedCode" class="form-control code-output" readonly>
+                    <button id="copyCodeBtn" class="btn btn--secondary">Copy</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="closeCodeBtn" class="btn btn--primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h3>Garden Gallery</h3>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="galleryGrid" class="gallery-grid">
+                    <div class="gallery-empty">
+                        <p>No saved gardens yet. Create a garden and save it to see it here!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="closeGalleryBtn" class="btn btn--primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Toast -->
+    <div id="statusToast" class="status-toast hidden">
+        <span id="statusMessage"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

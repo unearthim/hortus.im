@@ -1,0 +1,11 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400&display=swap');
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="#1f2121"/>
+  <text x="600" y="300" font-family="'Playfair Display', serif" font-size="90" fill="#32b8c6" text-anchor="middle">Letter Garden</text>
+  <text x="600" y="380" font-family="'Inter', sans-serif" font-size="30" fill="#a7a9a9" text-anchor="middle">An interactive botanical typography experiment.</text>
+  <text x="600" y="580" font-family="'Inter', sans-serif" font-size="20" fill="#626c71" text-anchor="middle">hortus.im</text>
+</svg>

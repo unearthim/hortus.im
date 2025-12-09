@@ -19,6 +19,72 @@
     <link rel="canonical" href="https://hortus.im/" />
     <link rel="webmention" href="https://webmention.io/unearth.im/webmention" />
 
+    <!-- === Schema.org JSON-LD === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": ["VisualArtwork", "SoftwareApplication"],
+          "@id": "https://hortus.im/#content",
+          "name": "Letter Garden | Hortus",
+          "description": "An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.",
+          "url": "https://hortus.im/",
+          "datePublished": "2024-12-01",
+          "artMedium": "Interactive Generative Typography",
+          "artForm": "Digital Monument",
+          "applicationCategory": "EntertainmentApplication",
+          "interactionType": "https://schema.org/TypeAction",
+          "creator": [
+            { "@id": "https://josiest.com/#person" },
+            { "@id": "https://felixvelas.co/#person" }
+          ],
+          "publisher": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://hortus.im/#website",
+          "url": "https://hortus.im/",
+          "name": "hortus.im",
+          "publisher": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://unearth.im/#organization",
+          "name": "unearth.im",
+          "url": "https://unearth.im/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://unearth.im/assets/unearth-logo.png"
+          },
+          "sameAs": [
+            "https://twitter.com/unearthim",
+            "https://github.com/unearthim"
+          ],
+          "foundingDate": "2024"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://josiest.com/#person",
+          "name": "Josie Jefferson",
+          "jobTitle": "Digital Archaeologist & Trust Architect",
+          "url": "https://josiest.com/",
+          "sameAs": ["https://notjojo.im"],
+          "affiliation": { "@id": "https://unearth.im/#organization" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://felixvelas.co/#person",
+          "name": "Felix Velasco",
+          "jobTitle": "Trust Architect & Digital Archaeologist",
+          "url": "https://felixvelas.co/",
+          "sameAs": ["https://www.linkedin.com/in/felix-velasco-b793015"],
+          "affiliation": { "@id": "https://unearth.im/#organization" }
+        }
+      ]
+    }
+    </script>
+
     <!-- === 3. Open Graph / Facebook === -->
     <meta property="og:type" content="website"> 
     <meta property="og:url" content="https://hortus.im/">
@@ -137,7 +203,7 @@
 
         <footer class="garden-footer">
             <p class="garden-info">Each letter creates a unique plant with its own characteristics.</p>
-            <p class="garden-info">a digital monument by <a href="https://unearth.im" target="_blank" rel="noopener">unearth.im</a></p>
+            <p class="garden-info">a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer">liminal mind meld</a></b> collaboration: digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer">archive & anvil</a></b></p>
         </footer>
     </div>
 

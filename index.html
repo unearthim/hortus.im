@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- === 0. Base Meta === -->
     <meta charset="UTF-8">
@@ -9,12 +10,14 @@
     <!-- === 1. Primary Meta Tags === -->
     <title>Letter Garden | Hortus</title>
     <meta name="title" content="Letter Garden | Hortus">
-    <meta name="description" content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
-    <meta name="keywords" content="interactive typography, generative art, botanical illustration, digital garden, creative coding, javascript art, svg animation, unearth.im">
-    <meta name="author" content="hortus.im (An unearth.im Project)">
+    <meta name="description"
+        content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
+    <meta name="keywords"
+        content="interactive typography, generative art, botanical illustration, digital garden, creative coding, javascript art, svg animation, unearth.im">
+    <meta name="author" content="hortus.im (by unearth heritage foundry - archive & anvil - unearth.im)">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    
+
     <!-- === 2. Canonical & Webmention === -->
     <link rel="canonical" href="https://hortus.im/" />
     <link rel="webmention" href="https://webmention.io/unearth.im/webmention" />
@@ -51,7 +54,8 @@
         {
           "@type": "Organization",
           "@id": "https://unearth.im/#organization",
-          "name": "unearth.im",
+          "name": "Unearth Heritage Foundry",
+"alternateName": ["Unearth Foundry","Archive & Anvil","Unearth Anvil","Unearth Works","Cultural Infrastructure Foundry"],
           "url": "https://unearth.im/",
           "logo": {
             "@type": "ImageObject",
@@ -86,10 +90,11 @@
     </script>
 
     <!-- === 3. Open Graph / Facebook === -->
-    <meta property="og:type" content="website"> 
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://hortus.im/">
     <meta property="og:title" content="Letter Garden | Hortus">
-    <meta property="og:description" content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
+    <meta property="og:description"
+        content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
     <meta property="og:image" content="https://hortus.im/og-image.png">
     <meta property="og:site_name" content="Hortus">
 
@@ -97,7 +102,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hortus.im/">
     <meta property="twitter:title" content="Letter Garden | Hortus">
-    <meta property="twitter:description" content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
+    <meta property="twitter:description"
+        content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
     <meta property="twitter:image" content="https://hortus.im/og-image.png">
 
     <!-- === 5. Favicons & Theme === -->
@@ -113,53 +119,53 @@
 
     <style>
         .garden-footer a {
-            color: var(--color-text-secondary); /* Use the secondary text color from your design system */
-            text-decoration: none; /* Remove the default underline */
-            border-bottom: 1px dotted var(--color-text-secondary); /* Match the text color */
+            color: var(--color-text-secondary);
+            /* Use the secondary text color from your design system */
+            text-decoration: none;
+            /* Remove the default underline */
+            border-bottom: 1px dotted var(--color-text-secondary);
+            /* Match the text color */
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
+
         .garden-footer a:hover {
-            color: var(--color-text); /* Use the main text color on hover for a brighter effect */
+            color: var(--color-text);
+            /* Use the main text color on hover for a brighter effect */
             border-bottom-color: var(--color-text);
         }
     </style>
 </head>
+
 <body data-color-scheme="dark">
     <div class="garden-container">
         <header class="garden-header">
             <h1 class="garden-title">Letter Garden</h1>
             <p class="garden-subtitle">Type a word and watch your garden grow</p>
-            
+
             <div class="input-container">
-                <input 
-                    type="text" 
-                    id="wordInput" 
-                    class="word-input form-control" 
-                    placeholder="Enter a word..."
-                    maxlength="20"
-                    autocomplete="off"
-                    spellcheck="false"
-                    aria-label="Type a word using A-Z letters"
-                >
-                <button id="clearButton" class="btn btn--secondary clear-btn" aria-label="Clear the garden">Clear Garden</button>
+                <input type="text" id="wordInput" class="word-input form-control" placeholder="Enter a word..."
+                    maxlength="20" autocomplete="off" spellcheck="false" aria-label="Type a word using A-Z letters">
+                <button id="clearButton" class="btn btn--secondary clear-btn" aria-label="Clear the garden">Clear
+                    Garden</button>
             </div>
         </header>
 
         <main class="garden-main">
             <div class="garden-ground" aria-hidden="true"></div>
-            <svg id="gardenSvg" class="garden-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYEnd meet" role="img" aria-label="Letter Garden canvas">
+            <svg id="gardenSvg" class="garden-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYEnd meet" role="img"
+                aria-label="Letter Garden canvas">
                 <defs>
                     <filter id="plantGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                        <feMerge> 
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                        <feMerge>
+                            <feMergeNode in="coloredBlur" />
+                            <feMergeNode in="SourceGraphic" />
                         </feMerge>
                     </filter>
                 </defs>
                 <!-- Plants will be dynamically added here -->
             </svg>
-            
+
             <!-- Save Toolbar -->
             <div id="saveToolbar" class="save-toolbar hidden">
                 <button id="exportPngBtn" class="save-btn" title="Export as PNG Image">
@@ -190,12 +196,8 @@
             <div class="form-group">
                 <label for="gardenCodeInput" class="form-label">Load Garden Code:</label>
                 <div class="code-input-container">
-                    <input 
-                        type="text" 
-                        id="gardenCodeInput" 
-                        class="form-control code-input" 
-                        placeholder="Enter garden code (e.g., GARDEN-ROSE-A4B2C1)"
-                    >
+                    <input type="text" id="gardenCodeInput" class="form-control code-input"
+                        placeholder="Enter garden code (e.g., GARDEN-ROSE-A4B2C1)">
                     <button id="loadCodeBtn" class="btn btn--primary">Load</button>
                 </div>
             </div>
@@ -203,12 +205,16 @@
 
         <footer class="garden-footer">
             <p class="garden-info">Each letter creates a unique plant with its own characteristics.</p>
-            <p class="garden-info">a <b><a href="https://sentientification.com" target="_blank" rel="noopener noreferrer">liminal mind meld</a></b> collaboration: digital monument by <b><a href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a></b> | <b><a href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer">archive & anvil</a></b></p>
+            <p class="garden-info">a <b><a href="https://sentientification.com" target="_blank"
+                        rel="noopener noreferrer">liminal mind meld</a></b> collaboration: digital monument by <b><a
+                        href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a></b> | <b><a
+                        href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer">archive &
+                        anvil</a></b></p>
         </footer>
     </div>
 
     <!-- Modals -->
-    
+
     <!-- Save Garden Modal -->
     <div id="saveGardenModal" class="modal hidden">
         <div class="modal-backdrop"></div>
@@ -220,7 +226,8 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="gardenName" class="form-label">Garden Name:</label>
-                    <input type="text" id="gardenName" class="form-control" placeholder="My Beautiful Garden" maxlength="50">
+                    <input type="text" id="gardenName" class="form-control" placeholder="My Beautiful Garden"
+                        maxlength="50">
                 </div>
             </div>
             <div class="modal-footer">
@@ -279,4 +286,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

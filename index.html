@@ -2,289 +2,495 @@
 <html lang="en">
 
 <head>
-    <!-- === 0. Base Meta === -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- === 0. Base Meta === -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-    <!-- === 1. Primary Meta Tags === -->
-    <title>Letter Garden | Hortus</title>
-    <meta name="title" content="Letter Garden | Hortus">
-    <meta name="description"
-        content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
-    <meta name="keywords"
-        content="interactive typography, generative art, botanical illustration, digital garden, creative coding, javascript art, svg animation, unearth.im">
-    <meta name="author" content="hortus.im (by unearth heritage foundry - archive & anvil - unearth.im)">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
+  <!-- === 1. Primary Meta Tags === -->
+  <title>Letter Garden | Hortus</title>
+  <meta name="title" content="Letter Garden | Hortus">
+  <meta name="description"
+    content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
+  <meta name="keywords"
+    content="interactive typography, generative art, botanical illustration, digital garden, creative coding, javascript art, svg animation, unearth.im">
+  <meta name="author" content="hortus.im (by unearth heritage foundry - archive & anvil - unearth.im)">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
 
-    <!-- === 2. Canonical & Webmention === -->
-    <link rel="canonical" href="https://hortus.im/" />
-    <link rel="webmention" href="https://webmention.io/unearth.im/webmention" />
+  <!-- === 2. Canonical & Webmention === -->
+  <link rel="canonical" href="https://hortus.im/" />
+  <link rel="webmention" href="https://webmention.io/unearth.im/webmention" />
 
-    <!-- === Schema.org JSON-LD === -->
-    <script type="application/ld+json">
+  <!-- === Schema.org JSON-LD === -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": [
+        "VisualArtwork",
+        "SoftwareApplication"
+      ],
+      "@id": "https://hortus.im/#content",
+      "name": "Letter Garden | Hortus",
+      "description": "An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.",
+      "url": "https://hortus.im/",
+      "datePublished": "2024-12-01",
+      "artMedium": "Interactive Generative Typography",
+      "artForm": "Digital Monument",
+      "applicationCategory": "EntertainmentApplication",
+      "interactionType": "https://schema.org/TypeAction",
+      "creator": [
         {
-          "@type": ["VisualArtwork", "SoftwareApplication"],
-          "@id": "https://hortus.im/#content",
-          "name": "Letter Garden | Hortus",
-          "description": "An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.",
-          "url": "https://hortus.im/",
-          "datePublished": "2024-12-01",
-          "artMedium": "Interactive Generative Typography",
-          "artForm": "Digital Monument",
-          "applicationCategory": "EntertainmentApplication",
-          "interactionType": "https://schema.org/TypeAction",
-          "creator": [
-            { "@id": "https://josiest.com/#person" },
-            { "@id": "https://felixvelas.co/#person" }
-          ],
-          "publisher": { "@id": "https://unearth.im/#organization" }
+          "@id": "https://josiest.com/#person"
         },
         {
-          "@type": "WebSite",
-          "@id": "https://hortus.im/#website",
-          "url": "https://hortus.im/",
-          "name": "hortus.im",
-          "publisher": { "@id": "https://unearth.im/#organization" }
+          "@id": "https://felixvelas.co/#person"
+        }
+      ],
+      "publisher": {
+        "@id": "https://unearth.im/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hortus.im/#website",
+      "url": "https://hortus.im/",
+      "name": "hortus.im",
+      "publisher": {
+        "@id": "https://unearth.im/#organization"
+      }
+    },
+      {
+      "@type": "Organization",
+      "@id": "https://unearth.im/#organization",
+      "name": "Unearth Heritage Foundry",
+      "alternateName": [
+        "Unearth Foundry",
+        "Heritage Lab"
+      ],
+      "url": "https://unearth.im",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://unearth.im/fingerprint.png"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Seattle",
+        "addressRegion": "WA",
+        "addressCountry": "US"
+      },
+      "foundingDate": "2024",
+      "description": "A philosophical research collective and digital archaeology lab. We preserve web heritage, explore AI-human collaboration frameworks, and build cultural infrastructure through the Archive & Anvil methodology.",
+      "knowsAbout": [
+        { "@id": "https://archaeobytology.org/#concept" },
+        { "@id": "https://sentientification.com/#concept" },
+        { "@id": "https://myceloom.com/#protocol" },
+        {
+          "@type": "DefinedTerm",
+          "name": "Digital Archaeology"
         },
         {
-          "@type": "Organization",
-          "@id": "https://unearth.im/#organization",
-          "name": "Unearth Heritage Foundry",
-"alternateName": ["Unearth Foundry","Archive & Anvil","Unearth Anvil","Unearth Works","Cultural Infrastructure Foundry"],
-          "url": "https://unearth.im/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://unearth.im/assets/unearth-logo.png"
-          },
-          "sameAs": [
-            "https://twitter.com/unearthim",
-            "https://github.com/unearthim"
-          ],
-          "foundingDate": "2024"
+          "@type": "DefinedTerm",
+          "name": "AI-Human Collaboration"
         },
         {
-          "@type": "Person",
-          "@id": "https://josiest.com/#person",
-          "name": "Josie Jefferson",
-          "jobTitle": "Digital Archaeologist & Trust Architect",
-          "url": "https://josiest.com/",
-          "sameAs": ["https://notjojo.im"],
-          "affiliation": { "@id": "https://unearth.im/#organization" }
+          "@type": "DefinedTerm",
+          "name": "Archive & Anvil"
         },
         {
-          "@type": "Person",
-          "@id": "https://felixvelas.co/#person",
-          "name": "Felix Velasco",
-          "jobTitle": "Trust Architect & Digital Archaeologist",
-          "url": "https://felixvelas.co/",
-          "sameAs": ["https://www.linkedin.com/in/felix-velasco-b793015"],
-          "affiliation": { "@id": "https://unearth.im/#organization" }
+          "@type": "DefinedTerm",
+          "name": "Semantic IP"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Heritage Preservation"
+        }
+      ],
+      "subOrganization": {
+        "@id": "https://unearth.works/#organization"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11yt8wf8rr",
+        "https://unearth.wiki",
+        "https://unearth.land",
+        "https://unearth.fyi",
+        "https://unearth.site",
+        "https://unearth.spot",
+        "https://unearth.name",
+        "https://unearth.page",
+        "https://unearth.ink",
+        "https://unearth.click",
+        "https://linkedin.com/company/unearthim",
+        "https://twitter.com/unearthim",
+        "https://github.com/unearthim",
+        "https://zenodo.org/communities/unearthim"
+      ],
+      "founder": [
+        {
+          "@id": "https://josiest.com/#person"
+        },
+        {
+          "@id": "https://felixvelas.co/#person"
+        }
+      ],
+      "member": [
+        {
+          "@id": "https://josiest.com/#person"
+        },
+        {
+          "@id": "https://felixvelas.co/#person"
         }
       ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://unearth.works/#organization",
+      "name": "Unearth Anvil",
+      "alternateName": ["Unearth Works", "Anvil Consulting"],
+      "description": "The consulting arm of Unearth Heritage Foundry, offering digital archaeology services, heritage preservation consulting, semantic infrastructure development, and Archive & Anvil methodology implementation.",
+      "url": "https://unearth.works",
+      "parentOrganization": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "sameAs": [
+        "https://unearth.works"
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://archaeobytology.org/#concept",
+      "name": "Archaeobytology",
+      "alternateName": ["Digital Archaeology of Data", "The Archaeology of Digital Artifacts"],
+      "description": "The systematic study and preservation of digital artifacts, data structures, and online cultural heritage. A discipline that applies archaeological methodologies to the excavation, documentation, and interpretation of digital remains.",
+      "url": "https://archaeobytology.org",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Digital Heritage Studies"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11yt8qm_qh",
+        "https://archaeobytology.org",
+        "https://zenodo.org/communities/archaeobytology/"
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://sentientification.com/#concept",
+      "name": "Sentientification",
+      "alternateName": ["The Sentientification Framework"],
+      "description": "A philosophical and technical framework for understanding the emergence of sentience-like properties in complex systems, particularly in AI-human collaborative contexts.",
+      "url": "https://sentientification.com",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "AI Philosophy & Consciousness Studies"
+      },
+      "sameAs": [
+        "https://www.google.com/search?kgmid=/g/11yt8wsd1s",
+        "https://sentientification.com",
+        "https://sentientification.org",
+        "https://zenodo.org/communities/sentientification/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://josiest.com/#person",
+      "name": "Josie Jefferson",
+      "url": "https://josiest.com",
+      "jobTitle": "Co-Founder & Digital Archaeologist",
+      "memberOf": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ICQ-UIN",
+          "name": "Legacy Web1 Identifier",
+          "value": "1428955",
+          "description": "Seven-digit pioneer-era UIN from the 1997 Mirabilis ICQ network, serving as a foundational node in the author's digital provenance."
+        }
+      ],
+      "sameAs": [
+        "https://notjojo.im",
+        "https://orcid.org/0009-0006-3330-8214",
+        "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Jefferson%2C%20Josie%22&l=list&p=1&s=10&sort=bestmatch"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://felixvelas.co/#person",
+      "name": "Felix Velasco",
+      "givenName": "Felix Jefferson",
+      "familyName": "Velasco",
+      "alternateName": [
+        "Jeff Velasco",
+        "Felix J Velasco",
+        "Felix Jefferson Velasco",
+        "Felix Jefferson T. Velasco"
+      ],
+      "description": "Co-Founder of Unearth Heritage Foundry and Digital Archaeologist specializing in the intersection of digital heritage preservation, as well as AI and human consciousness.",
+      "url": "https://felixvelas.co",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Vassar College",
+        "url": "https://www.vassar.edu/",
+        "sameAs": "https://en.wikipedia.org/wiki/Vassar_College"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Washington",
+        "url": "https://www.washington.edu/",
+        "sameAs": "https://en.wikipedia.org/wiki/University_of_Washington",
+        "description": "Fiscal Specialist; Fiscal Supervisor; Operations Specialist; Operations Manager;Assistant Director (17-year tenure)"
+      },
+      "image": "https://felixvelas.co/portrait.jpg",
+      "knowsAbout": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Sentientification",
+          "url": "https://sentientification.com/definition/",
+          "sameAs": "https://www.google.com/search?kgmid=/g/11yt8wsd1s"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Archaeobytology",
+          "url": "https://archaeobytology.org/definition/",
+          "sameAs": "https://www.google.com/search?kgmid=/g/11yt8qm_qh"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Myceloom",
+          "url": "https://myceloom.com/definition/"
+        }
+      ],
+      "jobTitle": "Co-Founder & Digital Archaeologist",
+      "memberOf": {
+        "@id": "https://unearth.im/#organization"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ICQ-UIN",
+          "name": "Legacy Web1 Identifier",
+          "value": "641658",
+          "description": "Six-digit pioneer-era UIN from the 1997 Mirabilis ICQ network, serving as a foundational node in the author's digital provenance."
+        }
+      ],
+      "sameAs": [
+        "https://web.archive.org/web/19990128143729/http://members.aol.com/AJJVelasco/me.html",
+        "https://web.archive.org/web/19981205002319/http://members.aol.com/AJJVelasco/home.html",
+        "https://web.archive.org/web/20040610152114/chez.com/fejjie",
+        "https://web.archive.org/web/20000302095404/http://untitled.kcizone.com/",
+        "https://web.archive.org/web/20000915145128/http://freespeech.org/untitled/me.html",
+        "https://web.archive.org/web/20000819091935/http://freespeech.org/untitled/",
+        "https://www.linkedin.com/in/felix-velasco-b793015",
+        "https://facebook.com/felix.velasco",
+        "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Velasco%2C%20Felix%22&l=list&p=1&s=10&sort=bestmatch",
+        "https://orcid.org/0009-0001-6047-0595",
+        "https://unearth.im/felix.html",
+        "https://unearth.name/felix.html"
+      ]
     }
-    </script>
+  ]
+}
+</script>
 
-    <!-- === 3. Open Graph / Facebook === -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hortus.im/">
-    <meta property="og:title" content="Letter Garden | Hortus">
-    <meta property="og:description"
-        content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
-    <meta property="og:image" content="https://hortus.im/og-image.png">
-    <meta property="og:site_name" content="Hortus">
+  <!-- === 3. Open Graph / Facebook === -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hortus.im/">
+  <meta property="og:title" content="Letter Garden | Hortus">
+  <meta property="og:description"
+    content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
+  <meta property="og:image" content="https://hortus.im/og-image.png">
+  <meta property="og:site_name" content="Hortus">
 
-    <!-- === 4. Twitter Card === -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://hortus.im/">
-    <meta property="twitter:title" content="Letter Garden | Hortus">
-    <meta property="twitter:description"
-        content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
-    <meta property="twitter:image" content="https://hortus.im/og-image.png">
+  <!-- === 4. Twitter Card === -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://hortus.im/">
+  <meta property="twitter:title" content="Letter Garden | Hortus">
+  <meta property="twitter:description"
+    content="An interactive botanical typography experiment where you can type a word and watch a unique digital garden grow. Each letter creates a plant with its own characteristics.">
+  <meta property="twitter:image" content="https://hortus.im/og-image.png">
 
-    <!-- === 5. Favicons & Theme === -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="alternate icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#1f2121">
-    <meta name="msapplication-TileColor" content="#32b8c6">
+  <!-- === 5. Favicons & Theme === -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#1f2121">
+  <meta name="msapplication-TileColor" content="#32b8c6">
 
-    <!-- === 6. Styles & Scripts === -->
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <!-- === 6. Styles & Scripts === -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
-    <style>
-        .garden-footer a {
-            color: var(--color-text-secondary);
-            /* Use the secondary text color from your design system */
-            text-decoration: none;
-            /* Remove the default underline */
-            border-bottom: 1px dotted var(--color-text-secondary);
-            /* Match the text color */
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-        }
+  <style>
+    .garden-footer a {
+      color: var(--color-text-secondary);
+      /* Use the secondary text color from your design system */
+      text-decoration: none;
+      /* Remove the default underline */
+      border-bottom: 1px dotted var(--color-text-secondary);
+      /* Match the text color */
+      transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    }
 
-        .garden-footer a:hover {
-            color: var(--color-text);
-            /* Use the main text color on hover for a brighter effect */
-            border-bottom-color: var(--color-text);
-        }
-    </style>
+    .garden-footer a:hover {
+      color: var(--color-text);
+      /* Use the main text color on hover for a brighter effect */
+      border-bottom-color: var(--color-text);
+    }
+  </style>
 </head>
 
 <body data-color-scheme="dark">
-    <div class="garden-container">
-        <header class="garden-header">
-            <h1 class="garden-title">Letter Garden</h1>
-            <p class="garden-subtitle">Type a word and watch your garden grow</p>
+  <div class="garden-container">
+    <header class="garden-header">
+      <h1 class="garden-title">Letter Garden</h1>
+      <p class="garden-subtitle">Type a word and watch your garden grow</p>
 
-            <div class="input-container">
-                <input type="text" id="wordInput" class="word-input form-control" placeholder="Enter a word..."
-                    maxlength="20" autocomplete="off" spellcheck="false" aria-label="Type a word using A-Z letters">
-                <button id="clearButton" class="btn btn--secondary clear-btn" aria-label="Clear the garden">Clear
-                    Garden</button>
-            </div>
-        </header>
+      <div class="input-container">
+        <input type="text" id="wordInput" class="word-input form-control" placeholder="Enter a word..." maxlength="20"
+          autocomplete="off" spellcheck="false" aria-label="Type a word using A-Z letters">
+        <button id="clearButton" class="btn btn--secondary clear-btn" aria-label="Clear the garden">Clear
+          Garden</button>
+      </div>
+    </header>
 
-        <main class="garden-main">
-            <div class="garden-ground" aria-hidden="true"></div>
-            <svg id="gardenSvg" class="garden-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYEnd meet" role="img"
-                aria-label="Letter Garden canvas">
-                <defs>
-                    <filter id="plantGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-                        <feMerge>
-                            <feMergeNode in="coloredBlur" />
-                            <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                    </filter>
-                </defs>
-                <!-- Plants will be dynamically added here -->
-            </svg>
+    <main class="garden-main">
+      <div class="garden-ground" aria-hidden="true"></div>
+      <svg id="gardenSvg" class="garden-svg" viewBox="0 0 1200 600" preserveAspectRatio="xMidYEnd meet" role="img"
+        aria-label="Letter Garden canvas">
+        <defs>
+          <filter id="plantGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- Plants will be dynamically added here -->
+      </svg>
 
-            <!-- Save Toolbar -->
-            <div id="saveToolbar" class="save-toolbar hidden">
-                <button id="exportPngBtn" class="save-btn" title="Export as PNG Image">
-                    <span class="save-icon">📷</span>
-                    <span class="save-label">PNG</span>
-                </button>
-                <button id="exportSvgBtn" class="save-btn" title="Export as SVG File">
-                    <span class="save-icon">🎨</span>
-                    <span class="save-label">SVG</span>
-                </button>
-                <button id="generateCodeBtn" class="save-btn" title="Generate Garden Code">
-                    <span class="save-icon">🔗</span>
-                    <span class="save-label">Code</span>
-                </button>
-                <button id="saveGardenBtn" class="save-btn" title="Save to Gallery">
-                    <span class="save-icon">💾</span>
-                    <span class="save-label">Save</span>
-                </button>
-                <button id="openGalleryBtn" class="save-btn" title="Open Gallery">
-                    <span class="save-icon">🖼️</span>
-                    <span class="save-label">Gallery</span>
-                </button>
-            </div>
-        </main>
+      <!-- Save Toolbar -->
+      <div id="saveToolbar" class="save-toolbar hidden">
+        <button id="exportPngBtn" class="save-btn" title="Export as PNG Image">
+          <span class="save-icon">📷</span>
+          <span class="save-label">PNG</span>
+        </button>
+        <button id="exportSvgBtn" class="save-btn" title="Export as SVG File">
+          <span class="save-icon">🎨</span>
+          <span class="save-label">SVG</span>
+        </button>
+        <button id="generateCodeBtn" class="save-btn" title="Generate Garden Code">
+          <span class="save-icon">🔗</span>
+          <span class="save-label">Code</span>
+        </button>
+        <button id="saveGardenBtn" class="save-btn" title="Save to Gallery">
+          <span class="save-icon">💾</span>
+          <span class="save-label">Save</span>
+        </button>
+        <button id="openGalleryBtn" class="save-btn" title="Open Gallery">
+          <span class="save-icon">🖼️</span>
+          <span class="save-label">Gallery</span>
+        </button>
+      </div>
+    </main>
 
-        <!-- Load Garden Code Input -->
-        <div class="code-input-section">
-            <div class="form-group">
-                <label for="gardenCodeInput" class="form-label">Load Garden Code:</label>
-                <div class="code-input-container">
-                    <input type="text" id="gardenCodeInput" class="form-control code-input"
-                        placeholder="Enter garden code (e.g., GARDEN-ROSE-A4B2C1)">
-                    <button id="loadCodeBtn" class="btn btn--primary">Load</button>
-                </div>
-            </div>
+    <!-- Load Garden Code Input -->
+    <div class="code-input-section">
+      <div class="form-group">
+        <label for="gardenCodeInput" class="form-label">Load Garden Code:</label>
+        <div class="code-input-container">
+          <input type="text" id="gardenCodeInput" class="form-control code-input"
+            placeholder="Enter garden code (e.g., GARDEN-ROSE-A4B2C1)">
+          <button id="loadCodeBtn" class="btn btn--primary">Load</button>
         </div>
-
-        <footer class="garden-footer">
-            <p class="garden-info">Each letter creates a unique plant with its own characteristics.</p>
-            <p class="garden-info">a <b><a href="https://sentientification.com" target="_blank"
-                        rel="noopener noreferrer">liminal mind meld</a></b> collaboration: digital monument by <b><a
-                        href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a></b> | <b><a
-                        href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer">archive &
-                        anvil</a></b></p>
-        </footer>
+      </div>
     </div>
 
-    <!-- Modals -->
+    <footer class="garden-footer">
+      <p class="garden-info">Each letter creates a unique plant with its own characteristics.</p>
+      <p class="garden-info">a <b><a href="https://sentientification.com" target="_blank"
+            rel="noopener noreferrer">liminal mind meld</a></b> collaboration: digital monument by <b><a
+            href="https://unearth.im" target="_blank" rel="noopener noreferrer">unearth.im</a></b> | <b><a
+            href="https://archaeobytology.org" target="_blank" rel="noopener noreferrer">archive &
+            anvil</a></b></p>
+    </footer>
+  </div>
 
-    <!-- Save Garden Modal -->
-    <div id="saveGardenModal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Save Garden</h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="gardenName" class="form-label">Garden Name:</label>
-                    <input type="text" id="gardenName" class="form-control" placeholder="My Beautiful Garden"
-                        maxlength="50">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="confirmSaveBtn" class="btn btn--primary">Save Garden</button>
-                <button id="cancelSaveBtn" class="btn btn--secondary">Cancel</button>
-            </div>
+  <!-- Modals -->
+
+  <!-- Save Garden Modal -->
+  <div id="saveGardenModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Save Garden</h3>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="gardenName" class="form-label">Garden Name:</label>
+          <input type="text" id="gardenName" class="form-control" placeholder="My Beautiful Garden" maxlength="50">
         </div>
+      </div>
+      <div class="modal-footer">
+        <button id="confirmSaveBtn" class="btn btn--primary">Save Garden</button>
+        <button id="cancelSaveBtn" class="btn btn--secondary">Cancel</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Garden Code Modal -->
-    <div id="gardenCodeModal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Garden Code</h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Share this code with others to recreate your garden:</p>
-                <div class="code-display">
-                    <input type="text" id="generatedCode" class="form-control code-output" readonly>
-                    <button id="copyCodeBtn" class="btn btn--secondary">Copy</button>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="closeCodeBtn" class="btn btn--primary">Close</button>
-            </div>
+  <!-- Garden Code Modal -->
+  <div id="gardenCodeModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Garden Code</h3>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Share this code with others to recreate your garden:</p>
+        <div class="code-display">
+          <input type="text" id="generatedCode" class="form-control code-output" readonly>
+          <button id="copyCodeBtn" class="btn btn--secondary">Copy</button>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button id="closeCodeBtn" class="btn btn--primary">Close</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="modal hidden">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content modal-content--large">
-            <div class="modal-header">
-                <h3>Garden Gallery</h3>
-                <button class="modal-close" aria-label="Close modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div id="galleryGrid" class="gallery-grid">
-                    <div class="gallery-empty">
-                        <p>No saved gardens yet. Create a garden and save it to see it here!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="closeGalleryBtn" class="btn btn--primary">Close</button>
-            </div>
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-content--large">
+      <div class="modal-header">
+        <h3>Garden Gallery</h3>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="galleryGrid" class="gallery-grid">
+          <div class="gallery-empty">
+            <p>No saved gardens yet. Create a garden and save it to see it here!</p>
+          </div>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button id="closeGalleryBtn" class="btn btn--primary">Close</button>
+      </div>
     </div>
+  </div>
 
-    <!-- Status Toast -->
-    <div id="statusToast" class="status-toast hidden">
-        <span id="statusMessage"></span>
-    </div>
+  <!-- Status Toast -->
+  <div id="statusToast" class="status-toast hidden">
+    <span id="statusMessage"></span>
+  </div>
 
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>
